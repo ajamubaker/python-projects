@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Horoscope Generator</title>
+</head>
+<body>
+  
+    <h1>Horoscope Generator</h1>
+
+    <div>
+        <label for="zodiacSign">Select your Zodiac :</label>
+        <select id="zodiacSign" onchange="generateHoroscope()">
+            <option value="aries">Aries</option>
+            <option value="taurus">Taurus</option>
+            <option value="gemini">Gemini</option>
+            <option value="cancer">Cancer</option>
+            <option value="leo">Leo</option>
+            <option value="virgo">Virgo</option>
+            <option value="libra">Libra</option>
+            <option value="scorpio">Scorpio</option>
+            <option value="sagittarius">Sagittarius</option>
+            <option value="capricorn">Capricorn</option>
+            <option value="aquarius">Aquarius</option>
+            <option value="pisces">Pisces</option>
+        </select>
+    </div>
+
+    <div id="horoscope">
+        <p>Select your zodiac sign to view your horoscope.</p>
+    </div>
+
+    <script>
+        function generateHoroscope() {
+            var sign = document.getElementById("zodiacSign").value;
+            var horoscopeText = getHoroscope(sign);
+            document.getElementById("horoscope").innerHTML = "<p>" + horoscopeText + "</p>";
+        }
+
+        function getHoroscope(sign) {
+            switch (sign) {
+                case "aries":
+                    return "Try to stay away from this drama  year, it will have a lasting impact on your life if you don't. ";
+                case "taurus":
+                    return "Your kindness and trust will be tested this year. Try not to be mean, or be too nice.";
+                case "gemini":
+                    return "You may revisit past struggles that have condemned you, do not make the same mistakes you did last time.";
+                case "cancer":
+                    return "Your life is going to take a turn for the better soon. Dont give up and be determined to succeed!";
+                case "leo":
+                    return "Try visiting relatives this year. You may find something useful in your travel.";
+                case "virgo":
+                    return "Remember, you are not the most important. Your selfishness will be tested. Try to focus on others and remember you can count on them.  ";
+                case "libra":
+                    return "Avoid fights and arguments. You may be caught up in an environment you may not be able to escape easily.";
+                case "scorpio":
+                    return "You might feel perceptive today. Trust your gut feelings.";
+                case "sagittarius":
+                    return "You have untapped potential waiting for you to discover. It may be forever lost and forgotten if not found if you neglect it.";
+                case "capricorn":
+                    return "You will have lots of fun this year and do things you have wished to do for a long time. ";
+                case "aquarius":
+                    return "Your innovative ideas may lead to breakthroughs today. Stay open-minded and explore new perspectives.";
+                case "pisces":
+                    return "Your sensivity will be a weakness this year. Try to control it to avoid others from taking advantage of you. ";
+                default:
+                    return "Select your zodiac sign to view your horoscope.";
+            }
+        }
+    </script>
+</body>
+</html>
